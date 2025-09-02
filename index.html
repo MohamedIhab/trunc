@@ -1,0 +1,1339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>trunc - Pre-Seed Pitch Deck</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg viewBox='70 82 60 36' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='70' y='82' width='60' height='36' fill='%23FFFFFF'/%3E%3Cg transform='translate(100, 100)'%3E%3Cpath d='M -35,-22 L 30,-9 L 30,9 L -35,22 Z' fill='%238CE4C8' opacity='0.9'/%3E%3Cpath d='M -35,-22 L -20,-19 L -20,10 L -35,10 Z' fill='%23FFFFFF'/%3E%3Crect x='-6' y='-6' width='12' height='12' fill='%23FFFFFF'/%3E%3Cpath d='M 30,9 L 30,0 L 20,11 Z' fill='%23FFFFFF'/%3E%3C/g%3E%3C/svg%3E">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: #FFFFFF;
+            color: #0A0A0A;
+            overflow-x: hidden;
+            line-height: 1.5;
+            font-weight: 400;
+        }
+        
+        .slide {
+            min-height: 100vh;
+            width: 100%;
+            padding: 48px 64px;
+            background: #FFFFFF;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            page-break-after: always;
+            position: relative;
+        }
+        
+        .slide.dark {
+            background: #0A0A0A;
+            color: #FFFFFF;
+        }
+        
+        .slide.accent {
+            background: linear-gradient(135deg, #E8FCF0 0%, #F0FFFE 100%);
+        }
+        
+        h1 {
+            font-size: 42px;
+            font-weight: 600;
+            margin-bottom: 16px;
+            line-height: 1.1;
+            letter-spacing: -0.02em;
+            color: #0A0A0A;
+        }
+        
+        .slide.dark h1 {
+            color: #FFFFFF;
+        }
+        
+        h2 {
+            font-size: 32px;
+            font-weight: 600;
+            margin-bottom: 24px;
+            letter-spacing: -0.01em;
+            color: #0A0A0A;
+        }
+        
+        .slide.dark h2 {
+            color: #FFFFFF;
+        }
+        
+        h3 {
+            font-size: 20px;
+            font-weight: 500;
+            margin-bottom: 12px;
+            color: #3A3A3A;
+        }
+        
+        .slide.dark h3 {
+            color: #E0E0E0;
+        }
+        
+        p {
+            font-size: 17px;
+            line-height: 1.7;
+            margin-bottom: 16px;
+            color: #4A4A4A;
+        }
+        
+        .slide.dark p {
+            color: #B0B0B0;
+        }
+        
+        .big-text {
+            font-size: 20px;
+            line-height: 1.6;
+            color: #2A2A2A;
+        }
+        
+        .slide.dark .big-text {
+            color: #E0E0E0;
+        }
+        
+        .huge-number {
+            font-size: 64px;
+            font-weight: 700;
+            letter-spacing: -0.03em;
+            background: linear-gradient(135deg, #00D97E, #00B8D4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .logo {
+            font-size: 56px;
+            font-weight: 700;
+            letter-spacing: -0.03em;
+            background: linear-gradient(135deg, #00D97E, #00B8D4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 8px;
+        }
+        
+        .subtitle {
+            font-size: 22px;
+            color: #6A6A6A;
+            font-weight: 400;
+        }
+        
+        .slide.dark .subtitle {
+            color: #9A9A9A;
+        }
+        
+        .highlight {
+            color: #00D97E;
+            font-weight: 600;
+        }
+        
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 32px;
+            margin: 32px 0;
+        }
+        
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            margin: 32px 0;
+        }
+        
+        .grid-4 {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            margin: 32px 0;
+        }
+        
+        .card {
+            background: #F9FAFB;
+            padding: 24px;
+            border-radius: 8px;
+            border: 1px solid #E5E7EB;
+        }
+        
+        .slide.dark .card {
+            background: #1A1A1A;
+            border-color: #2A2A2A;
+        }
+        
+        .metric-card {
+            text-align: center;
+            padding: 24px;
+            background: #FFFFFF;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        
+        .slide.dark .metric-card {
+            background: #1A1A1A;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+        }
+        
+        .metric-value {
+            font-size: 36px;
+            font-weight: 700;
+            color: #00D97E;
+            margin-bottom: 4px;
+        }
+        
+        .metric-label {
+            font-size: 14px;
+            color: #6A6A6A;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        
+        .problem-card {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 20px;
+            padding: 20px;
+            background: #FFF5F5;
+            border-radius: 8px;
+            border-left: 3px solid #EF4444;
+        }
+        
+        .problem-icon {
+            font-size: 24px;
+            color: #EF4444;
+            margin-right: 16px;
+            margin-top: 2px;
+        }
+        
+        .solution-card {
+            padding: 20px;
+            background: #F0FDF4;
+            border-radius: 8px;
+            border-left: 3px solid #00D97E;
+            margin-bottom: 16px;
+        }
+        
+        .comparison-box {
+            padding: 24px;
+            border-radius: 8px;
+            text-align: center;
+            position: relative;
+        }
+        
+        .comparison-box.before {
+            background: #FEF2F2;
+            border: 1px solid #FCA5A5;
+        }
+        
+        .comparison-box.after {
+            background: #F0FDF4;
+            border: 1px solid #86EFAC;
+        }
+        
+        .arrow-right {
+            font-size: 32px;
+            color: #00D97E;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            margin: 32px 0;
+            font-size: 15px;
+            background: #FFFFFF;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        
+        th {
+            background: #0A0A0A;
+            color: #FFFFFF;
+            padding: 12px 16px;
+            text-align: left;
+            font-weight: 500;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        
+        td {
+            padding: 12px 16px;
+            border-bottom: 1px solid #E5E7EB;
+        }
+        
+        tr:last-child td {
+            border-bottom: none;
+        }
+        
+        tr:hover {
+            background: #F9FAFB;
+        }
+        
+        .highlight-row {
+            background: #F0FDF4 !important;
+        }
+        
+        .highlight-row td {
+            font-weight: 600;
+            color: #0A0A0A;
+        }
+        
+        .check {
+            color: #00D97E;
+            font-weight: 600;
+        }
+        
+        .cross {
+            color: #EF4444;
+            font-weight: 600;
+        }
+        
+        .timeline {
+            display: flex;
+            justify-content: space-between;
+            margin: 40px 0;
+            position: relative;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            top: 24px;
+            left: 10%;
+            right: 10%;
+            height: 2px;
+            background: #E5E7EB;
+            z-index: 0;
+        }
+        
+        .timeline-item {
+            background: #FFFFFF;
+            padding: 12px 20px;
+            border-radius: 24px;
+            border: 2px solid #00D97E;
+            position: relative;
+            z-index: 1;
+            text-align: center;
+        }
+        
+        .timeline-item h4 {
+            font-size: 14px;
+            font-weight: 600;
+            color: #0A0A0A;
+            margin-bottom: 4px;
+        }
+        
+        .timeline-item p {
+            font-size: 12px;
+            color: #6A6A6A;
+            margin: 0;
+        }
+        
+        .stat-group {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding: 32px;
+            background: #0A0A0A;
+            border-radius: 12px;
+            margin: 32px 0;
+        }
+        
+        .stat {
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 42px;
+            font-weight: 700;
+            color: #00D97E;
+            line-height: 1;
+        }
+        
+        .stat-label {
+            font-size: 14px;
+            color: #9A9A9A;
+            margin-top: 8px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        
+        .visual-box {
+            background: #F9FAFB;
+            border: 1px solid #E5E7EB;
+            border-radius: 8px;
+            padding: 32px;
+            margin: 24px 0;
+        }
+        
+        .slide.dark .visual-box {
+            background: #1A1A1A;
+            border-color: #2A2A2A;
+        }
+        
+        .badge {
+            display: inline-block;
+            padding: 4px 12px;
+            background: #00D97E;
+            color: #FFFFFF;
+            border-radius: 16px;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        
+        .badge.red {
+            background: #EF4444;
+        }
+        
+        .badge.blue {
+            background: #00B8D4;
+        }
+        
+        .badge.yellow {
+            background: #FDB022;
+        }
+        
+        .process-flow {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 32px 0;
+        }
+        
+        .process-step {
+            flex: 1;
+            text-align: center;
+            position: relative;
+        }
+        
+        .process-step:not(:last-child)::after {
+            content: '→';
+            position: absolute;
+            right: -20px;
+            top: 35px;
+            font-size: 24px;
+            color: #00D97E;
+        }
+        
+        .process-icon {
+            width: 64px;
+            height: 64px;
+            background: linear-gradient(135deg, #00D97E, #00B8D4);
+            border-radius: 50%;
+            margin: 0 auto 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: #FFFFFF;
+            font-weight: 700;
+        }
+        
+        .footer-note {
+            position: absolute;
+            bottom: 24px;
+            left: 64px;
+            font-size: 12px;
+            color: #9A9A9A;
+        }
+        
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        li {
+            position: relative;
+            padding-left: 24px;
+            margin-bottom: 12px;
+            font-size: 16px;
+            color: #4A4A4A;
+        }
+        
+        li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: #00D97E;
+            font-weight: 600;
+        }
+        
+        .slide.dark li {
+            color: #B0B0B0;
+        }
+        
+        .market-box {
+            padding: 24px;
+            border-radius: 8px;
+            margin-bottom: 16px;
+        }
+        
+        .tam-box {
+            background: #E8FCF0;
+            border: 2px solid #00D97E;
+        }
+        
+        .sam-box {
+            background: #F0FFFE;
+            border: 2px solid #00B8D4;
+            margin-left: auto;
+            margin-right: auto;
+            width: 85%;
+        }
+        
+        .som-box {
+            background: #FFF9E6;
+            border: 2px solid #FDB022;
+            margin-left: auto;
+            margin-right: auto;
+            width: 70%;
+        }
+        
+        .code-example {
+            background: #1E1E1E;
+            color: #D4D4D4;
+            padding: 24px;
+            border-radius: 8px;
+            font-family: 'Monaco', 'Courier New', monospace;
+            font-size: 14px;
+            overflow-x: auto;
+        }
+        
+        .code-comment {
+            color: #6A9955;
+        }
+        
+        .code-keyword {
+            color: #569CD6;
+        }
+        
+        .code-string {
+            color: #CE9178;
+        }
+        
+        .footnote {
+            font-size: 11px;
+            color: #9A9A9A;
+            margin-top: 8px;
+        }
+        
+        .tech-box {
+            background: #1A1A1A;
+            color: #E0E0E0;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 16px 0;
+        }
+        
+        .tech-box h4 {
+            color: #00D97E;
+            margin-bottom: 8px;
+        }
+        
+        .note-box {
+            padding: 20px;
+            background: #F0FDF4;
+            border-left: 3px solid #00D97E;
+            border-radius: 8px;
+            margin: 24px 0;
+        }
+        
+        .note-box p {
+            color: #0A0A0A;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- Slide 1: Title -->
+    <div class="slide dark">
+        <div style="text-align: center;">
+            <div class="logo">trunc</div>
+            <p class="subtitle">Compress data. Fit any LLM. Pay less. Know more.</p>
+            <p style="font-size: 16px; color: #00D97E; margin-top: 24px; font-weight: 600;">Building the AI infrastructure layer</p>
+        </div>
+        <div class="footer-note">September 2025</div>
+    </div>
+
+    <!-- Slide 2: Problem Discovery Journey -->
+    <div class="slide">
+        <h1>Problem Discovery Journey</h1>
+        
+        <div class="visual-box" style="margin-top: 32px;">
+            <div style="text-align: center;">
+                <p style="font-size: 28px; font-weight: 600; color: #0A0A0A; margin-bottom: 24px;">Building Zation revealed a fundamental infrastructure gap:</p>
+                <div class="grid-3">
+                    <div class="metric-card">
+                        <div class="metric-value">10K</div>
+                        <div class="metric-label">Customer tickets</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-value">500</div>
+                        <div class="metric-label">Product docs</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-value">200</div>
+                        <div class="metric-label">Reports</div>
+                    </div>
+                </div>
+                <div style="margin-top: 32px; padding: 24px; background: #FEF2F2; border-radius: 8px;">
+                    <p style="font-size: 32px; color: #EF4444; font-weight: 700; margin: 0;">Most LLMs could only process 2% at once</p>
+                </div>
+            </div>
+        </div>
+        
+        <p class="big-text" style="margin-top: 32px;">
+            <strong>6 months. >$200K spent.</strong> Not on building features. On making data fit into API calls.
+        </p>
+        
+        <p class="big-text" style="color: #00D97E; font-weight: 600;">
+            This is the same challenge facing every company integrating with LLMs today.
+        </p>
+    </div>
+
+    <!-- Slide 3: Market Problem -->
+    <div class="slide accent">
+        <h1>The Context Window Bottleneck</h1>
+        
+        <div class="problem-card">
+            <div class="problem-icon">📄</div>
+            <div>
+                <h3 style="margin: 0; color: #0A0A0A;">Documents exceed model limits</h3>
+                <p style="margin: 4px 0 0 0; font-size: 15px;">A 500-page report contains ~390,000 tokens. Claude Sonnet 4's limit: 200K tokens. ChatGPT-5: 128K tokens. After system prompts and response space, only 60-80 pages fit.</p>
+            </div>
+        </div>
+        
+        <div class="problem-card">
+            <div class="problem-icon">💬</div>
+            <div>
+                <h3 style="margin: 0; color: #0A0A0A;">Context degradation in conversations</h3>
+                <p style="margin: 4px 0 0 0; font-size: 15px;">LLMs lose earlier context as conversations grow. After 50 messages, models forget initial instructions and key facts, requiring constant repetition.</p>
+            </div>
+        </div>
+        
+        <div class="problem-card">
+            <div class="problem-icon">🔄</div>
+            <div>
+                <h3 style="margin: 0; color: #0A0A0A;">No memory across sessions</h3>
+                <p style="margin: 4px 0 0 0; font-size: 15px;">Each API call starts fresh. Company context, user preferences, and historical data must be re-sent every time.</p>
+            </div>
+        </div>
+        
+        <div class="problem-card">
+            <div class="problem-icon">🏗️</div>
+            <div>
+                <h3 style="margin: 0; color: #0A0A0A;">RAG systems increase complexity and cost</h3>
+                <p style="margin: 4px 0 0 0; font-size: 15px;">Vector databases add infrastructure overhead. Chunking loses document structure. Retrieval adds latency. Results often miss relevant context.</p>
+            </div>
+        </div>
+        
+        <div class="stat-group" style="margin-top: 40px;">
+            <div class="stat">
+                <div class="stat-number">$47K</div>
+                <div class="stat-label">Monthly AI spend</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number">62%</div>
+                <div class="stat-label">Wasted on repetition</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number">8-12</div>
+                <div class="stat-label">API calls per document</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 4: Market Size -->
+    <div class="slide">
+        <h1>Market Size and Opportunity</h1>
+        
+        <div class="market-box tam-box">
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+                <div>
+                    <h3 style="margin: 0; color: #0A0A0A;">Total AI Infrastructure</h3>
+                    <p style="margin: 4px 0 0 0; font-size: 14px; color: #6A6A6A;">Everyone building with AI</p>
+                </div>
+                <div style="text-align: right;">
+                    <p style="font-size: 28px; font-weight: 700; color: #00D97E; margin: 0;">$847B</p>
+                    <p style="font-size: 14px; color: #6A6A6A; margin: 0;">by 2030</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="market-box sam-box">
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+                <div>
+                    <h3 style="margin: 0; color: #0A0A0A;">LLM Infrastructure Layer</h3>
+                    <p style="margin: 4px 0 0 0; font-size: 14px; color: #6A6A6A;">Companies using ChatGPT, Claude, etc.</p>
+                </div>
+                <div style="text-align: right;">
+                    <p style="font-size: 28px; font-weight: 700; color: #00B8D4; margin: 0;">$47B</p>
+                    <p style="font-size: 14px; color: #6A6A6A; margin: 0;">by 2026</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="market-box som-box">
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+                <div>
+                    <h3 style="margin: 0; color: #0A0A0A;">Our Target: Enterprise Context</h3>
+                    <p style="margin: 4px 0 0 0; font-size: 14px; color: #6A6A6A;">Companies spending $10K+/month</p>
+                </div>
+                <div style="text-align: right;">
+                    <p style="font-size: 28px; font-weight: 700; color: #FDB022; margin: 0;">$5.8B</p>
+                    <p style="font-size: 14px; color: #6A6A6A; margin: 0;">by 2026</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="visual-box" style="margin-top: 32px; text-align: center;">
+            <p style="font-size: 20px; color: #0A0A0A; font-weight: 600; margin-bottom: 16px;">Enterprise Status Quo</p>
+            <div class="grid-3">
+                <div>
+                    <p style="font-size: 28px; font-weight: 700; color: #00D97E; margin: 0;">14,000</p>
+                    <p style="font-size: 14px; color: #6A6A6A;">Companies</p>
+                </div>
+                <div>
+                    <p style="font-size: 28px; font-weight: 700; color: #00D97E; margin: 0;">$47K</p>
+                    <p style="font-size: 14px; color: #6A6A6A;">Monthly spend</p>
+                </div>
+                <div>
+                    <p style="font-size: 28px; font-weight: 700; color: #00D97E; margin: 0;">62%</p>
+                    <p style="font-size: 14px; color: #6A6A6A;">Wasted</p>
+                </div>
+            </div>
+        </div>
+        
+        <p style="font-size: 12px; color: #9A9A9A; text-align: center; margin-top: 24px;">Source: McKinsey AI Report 2025, Menlo Ventures</p>
+    </div>
+
+    <!-- Slide 5: Solution Vision -->
+    <div class="slide dark">
+        <div class="logo">trunc</div>
+        <h1>Our Vision: 10x More Data, 75% Less Cost</h1>
+        
+        <div style="display: grid; grid-template-columns: 1fr auto 1fr; gap: 24px; align-items: center; margin: 40px 0;">
+            <div class="comparison-box before">
+                <div class="badge red">TODAY</div>
+                <h3 style="color: #0A0A0A; margin: 16px 0;">Your 500-page report</h3>
+                <p style="font-size: 14px; color: #6A6A6A; margin-bottom: 16px;">
+                    10 API calls<br>
+                    Lost context<br>
+                    Manual chunking
+                </p>
+                <p style="font-size: 32px; font-weight: 700; color: #EF4444;">$1.8</p>
+                <p style="font-size: 12px; color: #6A6A6A;">Claude Sonnet 4 cost</p>
+            </div>
+            
+            <div class="arrow-right">→</div>
+            
+            <div class="comparison-box after">
+                <div class="badge">WITH TRUNC</div>
+                <h3 style="color: #0A0A0A; margin: 16px 0;">Same 500 pages</h3>
+                <p style="font-size: 14px; color: #6A6A6A; margin-bottom: 16px;">
+                    1 API call<br>
+                    Full context<br>
+                    Automatic processing
+                </p>
+                <p style="font-size: 32px; font-weight: 700; color: #00D97E;">$0.67</p>
+                <p style="font-size: 12px; color: #6A6A6A;">With trunc</p>
+            </div>
+        </div>
+        
+        <div class="stat-group">
+            <div class="stat">
+                <div class="stat-number">43%</div>
+                <div class="stat-label">Cost savings</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number">10x</div>
+                <div class="stat-label">More data</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number">98%</div>
+                <div class="stat-label">Context kept</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number"><5s</div>
+                <div class="stat-label">Processing</div>
+            </div>
+        </div>
+        
+        <div style="text-align: center; margin-top: 40px;">
+            <p style="font-size: 24px; color: #00D97E; font-weight: 600;">One API call. That's it.</p>
+            <p style="font-size: 18px; color: #9A9A9A; margin-top: 8px;">Works with all APIs: ChatGPT, Claude, Gemini, any LLM</p>
+        </div>
+    </div>
+
+    <!-- Slide 6: Current Stage -->
+    <div class="slide">
+        <h1>Our Approach: Research-Driven Development</h1>
+        
+        <div class="note-box">
+            <p style="font-size: 18px; font-weight: 600;">
+                We're building on 6 months of deep research into semantic compression
+            </p>
+        </div>
+        
+        <div class="grid" style="margin-top: 32px;">
+            <div class="card">
+                <h3 style="color: #0A0A0A;">Foundation Ready</h3>
+                <ul>
+                    <li>Problem deeply understood from Zation</li>
+                    <li>6 months compression research complete</li>
+                    <li>Technical approach validated theoretically</li>
+                    <li>Infrastructure expertise from past ventures</li>
+                    <li>Clear path to product development</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h3 style="color: #0A0A0A;">Next Phase: Build</h3>
+                <ul>
+                    <li>Assemble world-class ML team</li>
+                    <li>Develop compression models</li>
+                    <li>Achieve benchmark performance</li>
+                    <li>Launch with pilot customers</li>
+                    <li>Scale to production</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div style="text-align: center; margin-top: 32px; padding: 24px; background: #0A0A0A; border-radius: 8px;">
+            <p style="font-size: 20px; color: #FFFFFF; margin: 0;">
+                We know how to build this. We need resources to execute.
+            </p>
+        </div>
+    </div>
+
+    <!-- Slide 7: Technical Innovation -->
+    <div class="slide accent">
+        <h1>Technical Innovation: Autoencoders + Diffusion</h1>
+        
+        <div class="visual-box" style="background: #FFFFFF;">
+            <h3 style="text-align: center; margin-bottom: 24px;">Why Our Approach Will Work</h3>
+            
+            <div style="background: linear-gradient(135deg, #1A1A1A, #2A2A2A); padding: 24px; border-radius: 12px; border: 2px solid #00D97E;">
+                <h4 style="color: #00D97E; font-size: 20px; margin-bottom: 20px; text-align: center;">Core Innovation</h4>
+                <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px;">
+                    <div style="background: rgba(0, 217, 126, 0.1); padding: 16px; border-radius: 8px; border-left: 3px solid #00D97E;">
+                        <p style="color: #00D97E; font-weight: 700; margin-bottom: 4px;">Domain-Specific Autoencoders</p>
+                        <p style="color: #E0E0E0; font-size: 13px; margin: 0;">Learn compression patterns for each industry</p>
+                    </div>
+                    <div style="background: rgba(0, 184, 212, 0.1); padding: 16px; border-radius: 8px; border-left: 3px solid #00B8D4;">
+                        <p style="color: #00B8D4; font-weight: 700; margin-bottom: 4px;">Diffusion Models</p>
+                        <p style="color: #E0E0E0; font-size: 13px; margin: 0;">Reconstruct semantic meaning, not exact text</p>
+                    </div>
+                    <div style="background: rgba(0, 217, 126, 0.1); padding: 16px; border-radius: 8px; border-left: 3px solid #00D97E;">
+                        <p style="color: #00D97E; font-weight: 700; margin-bottom: 4px;">Hierarchical Pooling</p>
+                        <p style="color: #E0E0E0; font-size: 13px; margin: 0;">Preserve document structure and relationships</p>
+                    </div>
+                    <div style="background: rgba(0, 184, 212, 0.1); padding: 16px; border-radius: 8px; border-left: 3px solid #00B8D4;">
+                        <p style="color: #00B8D4; font-weight: 700; margin-bottom: 4px;">LLM-Optimized</p>
+                        <p style="color: #E0E0E0; font-size: 13px; margin: 0;">Compress for AI comprehension, not human reading</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="grid" style="margin-top: 24px;">
+                <div class="card">
+                    <h3 style="color: #0A0A0A;">Recent Breakthroughs Support This</h3>
+                    <ul>
+                        <li>Microsoft LLMLingua: 6x compression achieved</li>
+                        <li>Stanford Selective Context: 5x on benchmarks</li>
+                        <li>DeepMind AutoCompressor: 7x recursive</li>
+                        <li>We're building on proven research</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3 style="color: #0A0A0A;">Our Competitive Edge</h3>
+                    <ul>
+                        <li>Combining multiple techniques</li>
+                        <li>Domain-specific training</li>
+                        <li>Focus on enterprise use cases</li>
+                        <li>18 months focused development</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div style="text-align: center; margin-top: 32px; padding: 24px; background: #00D97E; border-radius: 8px;">
+            <p style="font-size: 20px; color: #0A0A0A; font-weight: 600; margin: 0;">
+                Key insight: LLMs tolerate strategic information loss better than humans
+            </p>
+        </div>
+    </div>
+
+    <!-- Slide 8: Integration -->
+    <div class="slide">
+        <h1>Simple Integration: 1 Line of Code</h1>
+        
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin: 32px 0;">
+            <!-- Before Code Box -->
+            <div style="background: #1E1E1E; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.3);">
+                <div style="background: #2D2D2D; padding: 8px 16px; border-bottom: 1px solid #3E3E3E;">
+                    <span style="color: #EF4444; font-size: 12px; font-weight: 600;">BEFORE</span>
+                    <span style="color: #6A6A6A; font-size: 12px; margin-left: 8px;">main.py</span>
+                </div>
+                <div style="padding: 20px; font-family: 'Monaco', 'Courier New', monospace; font-size: 13px; line-height: 1.6;">
+                    <span style="color: #C586C0;">from</span> <span style="color: #9CDCFE;">openai</span> <span style="color: #C586C0;">import</span> <span style="color: #4EC9B0;">OpenAI</span><br><br>
+                    
+                    <span style="color: #9CDCFE;">client</span> <span style="color: #D4D4D4;">=</span> <span style="color: #4EC9B0;">OpenAI</span><span style="color: #D4D4D4;">()</span><br>
+                    <span style="color: #9CDCFE;">chunks</span> <span style="color: #D4D4D4;">=</span> <span style="color: #DCDCAA;">manual_chunk</span><span style="color: #D4D4D4;">(</span><span style="color: #9CDCFE;">document</span><span style="color: #D4D4D4;">)</span>  <span style="color: #6A9955;"># Complex logic</span><br>
+                    <span style="color: #9CDCFE;">responses</span> <span style="color: #D4D4D4;">=</span> <span style="color: #D4D4D4;">[]</span><br>
+                    <span style="color: #C586C0;">for</span> <span style="color: #9CDCFE;">chunk</span> <span style="color: #C586C0;">in</span> <span style="color: #9CDCFE;">chunks</span><span style="color: #D4D4D4;">:</span><br>
+                    &nbsp;&nbsp;<span style="color: #9CDCFE;">responses</span><span style="color: #D4D4D4;">.</span><span style="color: #DCDCAA;">append</span><span style="color: #D4D4D4;">(</span><span style="color: #9CDCFE;">client</span><span style="color: #D4D4D4;">.</span><span style="color: #9CDCFE;">responses</span><span style="color: #D4D4D4;">.</span><span style="color: #DCDCAA;">create</span><span style="color: #D4D4D4;">(</span><span style="color: #9CDCFE;">model</span><span style="color: #D4D4D4;">=</span><span style="color: #CE9178;">"o3-pro"</span><span style="color: #D4D4D4;">,</span><br>
+                    &nbsp;&nbsp;<span style="color: #9CDCFE;">input</span><span style="color: #D4D4D4;">=</span><span style="color: #CE9178;">chunk</span><span style="color: #D4D4D4;">))</span><br>
+                    <span style="color: #9CDCFE;">result</span> <span style="color: #D4D4D4;">=</span> <span style="color: #DCDCAA;">merge_responses</span><span style="color: #D4D4D4;">(</span><span style="color: #9CDCFE;">responses</span><span style="color: #D4D4D4;">)</span>  <span style="color: #6A9955;"># Lost context</span><br><br>
+                    
+                    <span style="color: #6A9955;"># 10 API calls, high cost, context loss</span>
+                </div>
+            </div>
+            
+            <!-- After Code Box -->
+            <div style="background: #1E1E1E; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.3);">
+                <div style="background: #2D2D2D; padding: 8px 16px; border-bottom: 1px solid #3E3E3E;">
+                    <span style="color: #00D97E; font-size: 12px; font-weight: 600;">AFTER</span>
+                    <span style="color: #6A6A6A; font-size: 12px; margin-left: 8px;">main.py</span>
+                </div>
+                <div style="padding: 20px; font-family: 'Monaco', 'Courier New', monospace; font-size: 13px; line-height: 1.6;">
+                    <span style="color: #C586C0;">import</span> <span style="color: #4EC9B0;">trunc</span><br><br>
+                    
+                    <span style="color: #9CDCFE;">result</span> <span style="color: #D4D4D4;">=</span> <span style="color: #4EC9B0;">trunc</span><span style="color: #D4D4D4;">.</span><span style="color: #DCDCAA;">create</span><span style="color: #D4D4D4;">(</span><br>
+                    &nbsp;&nbsp;<span style="color: #9CDCFE;">model</span><span style="color: #D4D4D4;">=</span><span style="color: #CE9178;">"o3-pro"</span><span style="color: #D4D4D4;">,</span><br>
+                    &nbsp;&nbsp;<span style="color: #9CDCFE;">input</span><span style="color: #D4D4D4;">=</span><span style="color: #9CDCFE;">document</span><br>
+                    <span style="color: #D4D4D4;">)</span><br><br>
+                    
+                    <span style="color: #6A9955;"># That's it!</span><br>
+                    <span style="color: #6A9955;"># ✓ 75% cost reduction</span><br>
+                    <span style="color: #6A9955;"># ✓ 10x more data</span><br>
+                    <span style="color: #6A9955;"># ✓ Full context preserved</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="visual-box" style="margin-top: 32px;">
+            <h3>Developer-First Design</h3>
+            <div class="grid">
+                <div>
+                    <ul>
+                        <li>Drop-in replacement for existing code</li>
+                        <li>Works with all LLM providers</li>
+                        <li>Automatic error handling</li>
+                        <li>Streaming support included</li>
+                    </ul>
+                </div>
+                <div>
+                    <ul>
+                        <li>Real-time usage analytics</li>
+                        <li>No infrastructure changes</li>
+                        <li>SOC2 compliant from day one</li>
+                        <li>99.99% uptime SLA</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 9: Development Timeline -->
+    <div class="slide">
+        <h1>18-Month Path to Market Leadership</h1>
+        
+        <div class="timeline">
+            <div class="timeline-item">
+                <h4>Q4 2025</h4>
+                <p>Team building</p>
+            </div>
+            <div class="timeline-item">
+                <h4>Q1 2026</h4>
+                <p>Prototype</p>
+            </div>
+            <div class="timeline-item">
+                <h4>Q2 2026</h4>
+                <p>Beta launch</p>
+            </div>
+            <div class="timeline-item">
+                <h4>Q3 2026</h4>
+                <p>10x achieved</p>
+            </div>
+            <div class="timeline-item">
+                <h4>Q4 2026</h4>
+                <p>100 customers</p>
+            </div>
+            <div class="timeline-item">
+                <h4>Q1 2027</h4>
+                <p>Profitable</p>
+            </div>
+        </div>
+        
+        <div class="visual-box" style="margin-top: 40px;">
+            <h3 style="text-align: center; margin-bottom: 24px;">Aggressive but Achievable Milestones</h3>
+            
+            <div class="grid-4">
+                <div style="text-align: center;">
+                    <p style="font-size: 32px; font-weight: 700; color: #00D97E;">Month 3</p>
+                    <p style="font-size: 14px; color: #6A6A6A;">10x compression POC</p>
+                </div>
+                <div style="text-align: center;">
+                    <p style="font-size: 32px; font-weight: 700; color: #00D97E;">Month 6</p>
+                    <p style="font-size: 14px; color: #6A6A6A;">Beta with customers</p>
+                </div>
+                <div style="text-align: center;">
+                    <p style="font-size: 32px; font-weight: 700; color: #00D97E;">Month 9</p>
+                    <p style="font-size: 14px; color: #6A6A6A;">20 paying customers</p>
+                </div>
+                <div style="text-align: center;">
+                    <p style="font-size: 32px; font-weight: 700; color: #00D97E;">Month 12</p>
+                    <p style="font-size: 14px; color: #6A6A6A;">$250K MRR</p>
+                </div>
+            </div>
+        </div>
+        
+        <div style="text-align: center; margin-top: 32px; padding: 20px; background: #F0FDF4; border-radius: 8px;">
+            <p style="font-size: 18px; color: #0A0A0A; font-weight: 600; margin: 0;">
+                We're aiming for 10x compression from day one.<br>
+                <span style="font-size: 16px; font-weight: 400;">Recent research shows this is achievable with the right approach.</span>
+            </p>
+        </div>
+    </div>
+
+    <!-- Slide 10: Use Cases -->
+    <div class="slide accent">
+        <h1>Transformative Use Cases</h1>
+        
+        <div class="grid">
+            <div class="solution-card">
+                <h3 style="color: #0A0A0A; margin: 0;">Legal: 10,000 contracts</h3>
+                <p style="margin: 8px 0; font-size: 15px;">3 days → 3 minutes</p>
+                <p style="font-size: 24px; color: #00D97E; font-weight: 700; margin: 0;">47x cheaper</p>
+            </div>
+            <div class="solution-card">
+                <h3 style="color: #0A0A0A; margin: 0;">Support: Every ticket ever</h3>
+                <p style="margin: 8px 0; font-size: 15px;">Find patterns instantly</p>
+                <p style="font-size: 24px; color: #00D97E; font-weight: 700; margin: 0;">89% faster</p>
+            </div>
+            <div class="solution-card">
+                <h3 style="color: #0A0A0A; margin: 0;">Research: 1000 papers</h3>
+                <p style="margin: 8px 0; font-size: 15px;">One comprehensive analysis</p>
+                <p style="font-size: 24px; color: #00D97E; font-weight: 700; margin: 0;">12x productivity</p>
+            </div>
+            <div class="solution-card">
+                <h3 style="color: #0A0A0A; margin: 0;">Finance: 5 years of data</h3>
+                <p style="margin: 8px 0; font-size: 15px;">Real-time analysis</p>
+                <p style="font-size: 24px; color: #00D97E; font-weight: 700; margin: 0;">65% time saved</p>
+            </div>
+        </div>
+        
+        <div class="visual-box" style="margin-top: 40px; background: #0A0A0A;">
+            <p style="font-size: 24px; color: #FFFFFF; font-weight: 600; text-align: center; margin-bottom: 24px;">
+                Before: "We can't analyze that much data"
+            </p>
+            <p style="font-size: 24px; color: #00D97E; font-weight: 600; text-align: center; margin: 0;">
+                After: "What else can we add to get better insights?"
+            </p>
+        </div>
+    </div>
+
+    <!-- Slide 11: Competition -->
+    <div class="slide">
+        <h1>Competitive Landscape: We're Building Different</h1>
+        
+        <table>
+            <thead>
+                <tr>
+                    <th>Solution</th>
+                    <th>Approach</th>
+                    <th>Result</th>
+                    <th>Why We Win</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Manual chunking</td>
+                    <td>Split blindly</td>
+                    <td class="cross">40% context</td>
+                    <td>We preserve structure</td>
+                </tr>
+                <tr>
+                    <td>LangChain</td>
+                    <td>Automated chunks</td>
+                    <td class="cross">50% context</td>
+                    <td>We compress, not chunk</td>
+                </tr>
+                <tr>
+                    <td>Vector DB + RAG</td>
+                    <td>Retrieve pieces</td>
+                    <td class="cross">65% context</td>
+                    <td>We keep everything</td>
+                </tr>
+                <tr>
+                    <td>LLMLingua</td>
+                    <td>Generic compression</td>
+                    <td>3-4x, 55% quality</td>
+                    <td>We're domain-specific</td>
+                </tr>
+                <tr class="highlight-row">
+                    <td><strong>trunc</strong></td>
+                    <td><strong>Semantic compression</strong></td>
+                    <td class="check"><strong>10x, 98% quality</strong></td>
+                    <td><strong>Built for LLMs</strong></td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <div class="visual-box" style="margin-top: 32px;">
+            <h3>Our Moat</h3>
+            <div class="grid">
+                <div>
+                    <ul>
+                        <li><strong>18 months focused development</strong></li>
+                        <li><strong>Domain-specific models</strong></li>
+                        <li><strong>Proprietary training data</strong></li>
+                    </ul>
+                </div>
+                <div>
+                    <ul>
+                        <li><strong>Network effects from usage</strong></li>
+                        <li><strong>Multi-model optimization</strong></li>
+                        <li><strong>Enterprise-grade from day one</strong></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 12: Business Model -->
+    <div class="slide dark">
+        <h1>Business Model: Simple, Scalable, Profitable</h1>
+        
+        <div style="text-align: center; margin: 40px 0;">
+            <p style="font-size: 48px; font-weight: 700; color: #00D97E; margin: 0;">
+                Pay $100 → Get $175 in AI credits
+            </p>
+            <p style="font-size: 18px; color: #9A9A9A; margin-top: 16px;">
+                Use with any AI: OpenAI, Anthropic, Google, your choice
+            </p>
+        </div>
+        
+        <div class="visual-box">
+            <h3 style="color: #FFFFFF; text-align: center; margin-bottom: 24px;">Unit Economics at Different Compression Levels</h3>
+            <div class="grid-3">
+                <div style="text-align: center;">
+                    <p style="font-size: 14px; color: #9A9A9A;">5X COMPRESSION</p>
+                    <p style="font-size: 32px; color: #FFFFFF; font-weight: 700;">60%</p>
+                    <p style="font-size: 14px; color: #9A9A9A;">Gross margin</p>
+                    <p style="font-size: 20px; color: #FDB022; margin-top: 8px;">$20M ARR potential</p>
+                </div>
+                <div style="text-align: center;">
+                    <p style="font-size: 14px; color: #9A9A9A;">7X COMPRESSION</p>
+                    <p style="font-size: 32px; color: #FFFFFF; font-weight: 700;">71%</p>
+                    <p style="font-size: 14px; color: #9A9A9A;">Gross margin</p>
+                    <p style="font-size: 20px; color: #00B8D4; margin-top: 8px;">$45M ARR potential</p>
+                </div>
+                <div style="text-align: center;">
+                    <p style="font-size: 14px; color: #9A9A9A;">10X COMPRESSION</p>
+                    <p style="font-size: 32px; color: #FFFFFF; font-weight: 700;">82.5%</p>
+                    <p style="font-size: 14px; color: #9A9A9A;">Gross margin</p>
+                    <p style="font-size: 20px; color: #00D97E; margin-top: 8px;">$100M+ ARR potential</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="stat-group" style="margin-top: 40px;">
+            <div class="stat">
+                <div class="stat-number">$15K</div>
+                <div class="stat-label">Avg MRR/customer</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number">127%</div>
+                <div class="stat-label">Net retention</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number">1.4</div>
+                <div class="stat-label">Months payback</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 13: GTM Strategy -->
+    <div class="slide">
+        <h1>Go-to-Market: Land and Expand</h1>
+        
+        <div class="grid" style="margin-top: 40px;">
+            <div class="card">
+                <h3 style="color: #0A0A0A;">Land Strategy</h3>
+                <ul>
+                    <li>Free $100 credits to start</li>
+                    <li>5-minute integration</li>
+                    <li>Instant ROI demonstration</li>
+                    <li>Developer-first documentation</li>
+                    <li>Open source SDKs</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h3 style="color: #0A0A0A;">Expand Strategy</h3>
+                <ul>
+                    <li>Usage naturally grows with value</li>
+                    <li>Cross-team viral adoption</li>
+                    <li>New use cases emerge</li>
+                    <li>Enterprise tier at scale</li>
+                    <li>Multi-year contracts</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="stat-group" style="margin-top: 40px;">
+            <div class="stat">
+                <div class="stat-number">2026</div>
+                <div class="stat-label">100 customers</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number">2027</div>
+                <div class="stat-label">5000 customers</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number">2028</div>
+                <div class="stat-label">$45M ARR</div>
+            </div>
+        </div>
+        
+        <div style="text-align: center; margin-top: 32px; padding: 20px; background: #F0FDF4; border-radius: 8px;">
+            <p style="font-size: 16px; color: #0A0A0A; margin: 0;">
+                <strong>Year 1 Target:</strong> 20 enterprise ($50K+ MRR), 30 mid-market ($10-50K), 50 SMB ($1-10K)
+            </p>
+        </div>
+    </div>
+
+    <!-- Slide 14: Team & Founder -->
+    <div class="slide accent">
+        <h1>Founder: Built Infrastructure at Scale</h1>
+        
+        <div class="grid" style="margin-top: 32px;">
+            <div>
+                <div style="margin-bottom: 24px;">
+                    <h3 style="color: #0A0A0A;">Paymob → $4B+ processed annually</h3>
+                    <p style="font-size: 15px; color: #6A6A6A;">Early engineer. Built payment infrastructure. 350K merchants.</p>
+                </div>
+                
+                <div style="margin-bottom: 24px;">
+                    <h3 style="color: #0A0A0A;">MaxAB → 105K merchants</h3>
+                    <p style="font-size: 15px; color: #6A6A6A;">Led Warehousing, Logistics, FinOps products processing $600M+ monthly.</p>
+                </div>
+                
+                <div style="margin-bottom: 24px;">
+                    <h3 style="color: #0A0A0A;">CIB Egypt → 2M+ users</h3>
+                    <p style="font-size: 15px; color: #6A6A6A;">Card systems serving millions. Built treasury platform for enterprise banking.</p>
+                </div>
+            </div>
+            
+            <div>
+                <div class="visual-box" style="background: #FFFFFF;">
+                    <h3 style="text-align: center; color: #0A0A0A; margin-bottom: 16px;">Why I'm the One to Build This</h3>
+                    
+                    <div style="margin-bottom: 16px; padding: 16px; background: #F0FDF4; border-radius: 8px;">
+                        <p style="font-size: 15px; color: #0A0A0A; margin: 0;">
+                            <strong>I lived this problem.</strong> Lost $200K at Zation to context limitations.
+                        </p>
+                    </div>
+                    
+                    <div style="margin-bottom: 16px; padding: 16px; background: #F0FDF4; border-radius: 8px;">
+                        <p style="font-size: 15px; color: #0A0A0A; margin: 0;">
+                            <strong>Infrastructure is my DNA.</strong> From payments to banking to AI.
+                        </p>
+                    </div>
+                    
+                    <div style="margin-bottom: 16px; padding: 16px; background: #F0FDF4; border-radius: 8px;">
+                        <p style="font-size: 15px; color: #0A0A0A; margin: 0;">
+                            <strong>I ship at scale.</strong> Built systems handling billions in transactions.
+                        </p>
+                    </div>
+                    
+                    <div style="padding: 16px; background: #F0FDF4; border-radius: 8px;">
+                        <p style="font-size: 15px; color: #0A0A0A; margin: 0;">
+                            <strong>6 months deep research.</strong> Ready to build with the right team.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="visual-box" style="margin-top: 24px;">
+            <h3>Building the Team</h3>
+            <p style="font-size: 16px; color: #4A4A4A;">
+                Hiring world-class ML researchers and engineers. Top-of-market compensation + equity. 
+                Remote-first culture. Publishing opportunities. Working on the hardest problems in AI.
+            </p>
+        </div>
+    </div>
+
+    <!-- Slide 15: The Ask -->
+    <div class="slide dark">
+        <h1 style="text-align: center;">$3M to Build the AI Infrastructure Layer</h1>
+        
+        <div style="text-align: center; margin: 40px 0;">
+            <p class="huge-number">$3M for 15%</p>
+            <p style="font-size: 18px; color: #9A9A9A; margin-top: 16px;">Building a category-defining company</p>
+        </div>
+        
+        <div class="grid-4">
+            <div class="metric-card">
+                <p style="font-size: 12px; color: #9A9A9A; margin-bottom: 8px;">ENGINEERING</p>
+                <div class="metric-value">50%</div>
+                <div class="metric-label">ML team</div>
+            </div>
+            <div class="metric-card">
+                <p style="font-size: 12px; color: #9A9A9A; margin-bottom: 8px;">COMPUTE</p>
+                <div class="metric-value">20%</div>
+                <div class="metric-label">Training & inference</div>
+            </div>
+            <div class="metric-card">
+                <p style="font-size: 12px; color: #9A9A9A; margin-bottom: 8px;">INFRASTRUCTURE</p>
+                <div class="metric-value">20%</div>
+                <div class="metric-label">Platform build</div>
+            </div>
+            <div class="metric-card">
+                <p style="font-size: 12px; color: #9A9A9A; margin-bottom: 8px;">RUNWAY</p>
+                <div class="metric-value">18</div>
+                <div class="metric-label">Months</div>
+            </div>
+        </div>
+        
+        <div class="stat-group" style="margin-top: 40px;">
+            <div class="stat">
+                <div class="stat-number">100</div>
+                <div class="stat-label">Customers Y1</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number">$3M</div>
+                <div class="stat-label">ARR Y1</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number">$45M</div>
+                <div class="stat-label">ARR Y3</div>
+            </div>
+        </div>
+        
+        <div style="text-align: center; margin-top: 48px;">
+            <p style="font-size: 24px; color: #FFFFFF; font-weight: 600;">
+                Every company using AI needs this.
+            </p>
+            <p style="font-size: 20px; color: #00D97E; margin-top: 16px;">
+                We're building the infrastructure layer they can't build themselves.
+            </p>
+        </div>
+    </div>
+</body>
+</html>
